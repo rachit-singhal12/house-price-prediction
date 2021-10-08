@@ -32,7 +32,7 @@ class Main{
             arr[i]=scan.nextInt();
             
         //calling minimun function 
-        System.out.println("Maximum number in an array element is : ");
+        System.out.println("Maximum number in an array element is : ") ;
         System.out.println(obj.minimun(arr));
         
         //calling maximum funtion
