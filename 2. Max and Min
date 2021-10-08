@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class Methods{
+    int minimun(int arr[])
+    {
+        int temp=arr[0];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>temp)temp=arr[i];
+        }
+        return temp;
+    }
+    int maximum(int arr[])
+    {
+        int temp=arr[0];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<temp){temp=arr[i];}
+        }
+        return temp;
+    }
+}
+class Main{
+    public static void main(String [] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        Methods obj=new Methods();
+        
+        int n=scan.nextInt();
+        int[] arr=new int[n];
+        
+        for(int i=0;i<n;i++)
+            arr[i]=scan.nextInt();
+            
+        //calling minimun function 
+        System.out.println("Maximum number in an array element is : ");
+        System.out.println(obj.minimun(arr));
+        
+        //calling maximum funtion
+        System.out.println("Minimum number in an array element is : ");
+        System.out.println(obj.maximum(arr));
+}
+}
