@@ -1,4 +1,4 @@
-//learning purpose only
+//Reverse an array element 
 import java.util.Scanner;
 class Methods{
     int[] reverse(int arr[],int n)
