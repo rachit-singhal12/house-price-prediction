@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+</head>
+<body style="margin: 0;background-color: 	#F0F0F0;">
+    <center><br>
+        <h1 style="font-size : 40px;color : orange"><b>HOUSE PRICE PREDICTION</b></h1>
+        <p style="font-size : 15x;margin-top:0">Check the price for your requirement of house</p>
+        <br><table cellpadding=10 style="text-align : center">
+        <form action="{{ url_for('predict') }}" method="POST" name="values_form">
+            <tr>
+                <td><label for="bedrooms"><b>BEDROOMS</b></label></td>
+                <td><label for="bathroom"><b>BATHROOMS</b></td>
+                <td><b>FLOORS</b></td>
+                <td><b>VIEW</b></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="bedrooms" id="bedrooms" required></input></td>
+                <td><input type="number" name="bathroom" id="bathroom" required></input></td>
+                <td><input type="number" name="floors" if="floors" required></input></td>
+                <td><input type="number" name="view" id="view" required></input></td>
+            </tr>
+            <tr>
+                <td><b>SQFT_LIVING</b></td>
+                <td><b>SQFT_LOT</b></td>
+                <td><b>SQFT_ABOVE</b></td>
+                <td><b>SQFT_BASEMENT</b></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="sqft_living" id="sqft_living" required></input></td>
+                <td><input type="number" name="sqft_lot" id="sqft_lot" required></input></td>
+                <td><input type="number" name="sqft_above" id="sqft_above" required></input></td>
+                <td><input type="number" name="sqft_basement" id="sqft_basement" required></input></td>
+            </tr>
+            <tr>
+                <td><b>YEAR BUILT</b></td>
+                <td><b>YEAR RENOVATED</b></td>
+                <td><b>CONDITION</b></td>
+                <td><b>WATERFRONT</b></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="yr_built" id="yr_built" required></input></td>
+                <td><input type="number" name="yr_renovated" id="yr_renovated" required></input></td>
+                <td><input type="number" name="condition" id="condition" required></input></td>
+                <td><input type="number" name="waterfront" id="waterfront" required></input></td>
+            </tr>
+            <tr>
+                <td  colspan = 5><br>
+                <input style="color : white;background-color : orange;border : none;font-size: 20px;" type="submit" name="subform" value="CHECK"></input>
+                </td>
+            </tr>
+        </form>
+        </table>
+        <h3><label style="font-size : 20px">You Need: </label><label style="color : red;font-size : 30px">{{ data }} </label><br><br></h3>
+    </center>
+</body>
+</html>
