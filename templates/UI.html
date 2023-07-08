@@ -1,61 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Price Prediction</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>House Proce Prediction</title>
+	<link rel="stylesheet" href="assets/css/meyawo.css">
 </head>
-<body style="margin: 0;background-color: 	#F0F0F0;">
-    <center><br>
-        <h1 style="font-size : 40px;color : orange"><b>HOUSE PRICE PREDICTION</b></h1>
-        <p style="font-size : 15x;margin-top:0">Check the price for your requirement of house</p>
-        <br><table cellpadding=10 style="text-align : center">
-        <form action="{{ url_for('predict') }}" method="POST" name="values_form">
-            <tr>
-                <td><label for="bedrooms"><b>BEDROOMS</b></label></td>
-                <td><label for="bathroom"><b>BATHROOMS</b></td>
-                <td><b>FLOORS</b></td>
-                <td><b>VIEW</b></td>
-            </tr>
-            <tr>
-                <td><input type="number" name="bedrooms" id="bedrooms" required></input></td>
-                <td><input type="number" name="bathroom" id="bathroom" required></input></td>
-                <td><input type="number" name="floors" if="floors" required></input></td>
-                <td><input type="number" name="view" id="view" required></input></td>
-            </tr>
-            <tr>
-                <td><b>SQFT_LIVING</b></td>
-                <td><b>SQFT_LOT</b></td>
-                <td><b>SQFT_ABOVE</b></td>
-                <td><b>SQFT_BASEMENT</b></td>
-            </tr>
-            <tr>
-                <td><input type="number" name="sqft_living" id="sqft_living" required></input></td>
-                <td><input type="number" name="sqft_lot" id="sqft_lot" required></input></td>
-                <td><input type="number" name="sqft_above" id="sqft_above" required></input></td>
-                <td><input type="number" name="sqft_basement" id="sqft_basement" required></input></td>
-            </tr>
-            <tr>
-                <td><b>YEAR BUILT</b></td>
-                <td><b>YEAR RENOVATED</b></td>
-                <td><b>CONDITION</b></td>
-                <td><b>WATERFRONT</b></td>
-            </tr>
-            <tr>
-                <td><input type="number" name="yr_built" id="yr_built" required></input></td>
-                <td><input type="number" name="yr_renovated" id="yr_renovated" required></input></td>
-                <td><input type="number" name="condition" id="condition" required></input></td>
-                <td><input type="number" name="waterfront" id="waterfront" required></input></td>
-            </tr>
-            <tr>
-                <td  colspan = 5><br>
-                <input style="color : white;background-color : orange;border : none;font-size: 20px;" type="submit" name="subform" value="CHECK"></input>
-                </td>
-            </tr>
-        </form>
-        </table>
-        <h3><label style="font-size : 20px">You Need: </label><label style="color : red;font-size : 30px">{{ data }} </label><br><br></h3>
-    </center>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#"> Price Predictor</a>         
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#about">About</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#testmonial">check</a>
+                </li>
+            </ul>
+        </div>          
+    </nav>
+    
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am Rachit Singhal</span>
+            </h1>
+            <p class="header-subtitle">FRONTEND WEB DESIGNER</p>
+        </div>              
+    </header>
+    
+    <section class="section pt-0" id="about">
+        <div class="container text-center">
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/man.png" class="about-img" alt="">
+                </div>
+                <div class="about-caption">
+                    <h2 class="section-title mb-3">About?</h2>
+                    <p>
+                        House price prediction is a process of estimating the future value of residential properties. It involves analyzing various factors that influence property prices, such as location, size, amenities, market trends, economic indicators, and demographic data. By examining historical sales data and employing statistical modeling techniques, researchers and analysts can develop predictive models to forecast house prices.
+                        <br>house price prediction is a valuable tool for buyers, sellers, real estate agents, and investors to make informed decisions and assess the potential value of residential properties. It can help individuals and organizations navigate the housing market and optimize their investments based on reliable forecasts.       
+                    </p>
+                </div>              
+            </div>
+        </div>
+    </section>
+    <section class="section" id="testmonial">
+        <div class="container text-center">
+            <h6 class="section-title mb-6">House price prediction</h6>
+            <p class="section-subtitle">Fill the required field</p><br><br>
+            <div class="row" style = "padding-left : 18%">
+                <table cellpadding=10 style="text-align : center">
+                    <form action="{{ url_for('predict') }}" method="POST" name="values_form">
+                        <tr>
+                            <td><label for="bedrooms"><b>BEDROOMS</b></label></td>
+                            <td><label for="bathroom"><b>BATHROOMS</b></td>
+                            <td><b>FLOORS</b></td>
+                            <td><b>VIEW</b></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" name="bedrooms" id="bedrooms" required></input></td>
+                            <td><input type="number" name="bathroom" id="bathroom" required></input></td>
+                            <td><input type="number" name="floors" if="floors" required></input></td>
+                            <td><input type="number" name="view" id="view" required></input></td>
+                        </tr>
+                        <tr>
+                            <td><b>SQFT_LIVING</b></td>
+                            <td><b>SQFT_LOT</b></td>
+                            <td><b>SQFT_ABOVE</b></td>
+                            <td><b>SQFT_BASEMENT</b></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" name="sqft_living" id="sqft_living" required></input></td>
+                            <td><input type="number" name="sqft_lot" id="sqft_lot" required></input></td>
+                            <td><input type="number" name="sqft_above" id="sqft_above" required></input></td>
+                            <td><input type="number" name="sqft_basement" id="sqft_basement" required></input></td>
+                        </tr>
+                        <tr>
+                            <td><b>YEAR BUILT</b></td>
+                            <td><b>YEAR RENOVATED</b></td>
+                            <td><b>CONDITION</b></td>
+                            <td><b>WATERFRONT</b></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" name="yr_built" id="yr_built" required></input></td>
+                            <td><input type="number" name="yr_renovated" id="yr_renovated" required></input></td>
+                            <td><input type="number" name="condition" id="condition" required></input></td>
+                            <td><input type="number" name="waterfront" id="waterfront" required></input></td>
+                        </tr>
+                        <tr>
+                            <td  colspan = 5><br>
+                            <input style="color : white;background-color : grey;border : none;font-size: 20px;padding : 10px;" type="submit" name="subform" value="Predict"></input>
+                            </td>
+                        </tr>
+                    </form>
+                    </table>
+            </div>
+            <h3><label style="font-size : 20px">You Need: </label><label style="color : red;font-size : 30px">{{ data }} </label><br><br></h3>
+        </div>
+    </section> 
+    <div class="container" style="background-color : black">
+        <footer class="footer">       
+        </footer>
+    </div>
 </body>
 </html>
